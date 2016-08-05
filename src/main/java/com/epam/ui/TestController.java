@@ -16,14 +16,13 @@ public class TestController {
     @Autowired
     ProductRepository productRepository;
 
-    @RequestMapping("welcome")
-    @ResponseBody
+    @RequestMapping("home")
     String homePage() {
         Product product = new Product();
         product.setName("валянки");
         productRepository.save(product);
 
-        return "Home Page, " + productRepository.count();
+        return "welcome";
     }
 
     @RequestMapping("list")
@@ -46,7 +45,6 @@ public class TestController {
 
         return list.toString();
     }
-
     //todo spring data
     // TODO: 7/25/16 spring boot template (html/jsp)
 
